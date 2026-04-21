@@ -1,0 +1,260 @@
+/* Custom Styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d8b4fe #f3e8ff;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f3e8ff;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #c084fc;
+  border-radius: 10px;
+}
+
+.nav-link {
+  color: #6b7280;
+}
+
+.nav-link:hover {
+  background: #faf5ff;
+  color: #7e22ce;
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+  color: #7e22ce;
+  font-weight: 600;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background:
+   linear-gradient(to right, rgba(30, 27, 75, 0.9) 0%, rgba(59, 7, 100, 0.8) 20%, rgba(88, 28, 135, 0.4) 60%, rgba(126, 34, 206, 0) 100%),
+    url('img/bg-doc-sach.jpg');
+  background-size: auto, 60%;
+  background-position: center, right 70px;
+  background-attachment: scroll, fixed;
+  background-repeat: no-repeat, no-repeat;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168,85,247,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+/* Book card hover */
+.book-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.15);
+}
+
+.book-card:hover .book-cover {
+  transform: scale(1.05);
+}
+
+.book-cover {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Category card */
+.category-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(168,85,247,0.1));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(168, 85, 247, 0.12);
+}
+
+/* Modal slide */
+.modal-slide {
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Toast */
+.toast-enter {
+  animation: toastIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes toastIn {
+  from { transform: translateY(20px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Weekly badge pulse */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(251,191,36,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(251,191,36,0); }
+}
+
+.pulse-badge {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Page transitions */
+.page-enter {
+  animation: pageIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Read badge */
+.read-badge {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* Star rating */
+.star-filled {
+  color: #fbbf24;
+  filter: drop-shadow(0 1px 2px rgba(251,191,36,0.3));
+}
+
+/* Book spine effect */
+.book-spine {
+  position: relative;
+  box-shadow: 0 0 0 8px rgba(168, 85, 247, 0.3), 0 20px 60px rgba(168, 85, 247, 0.15);
+}
+
+.book-spine::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.05));
+  border-radius: 2px 0 0 2px;
+}
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, #f3e8ff 25%, #e9d5ff 50%, #f3e8ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* YouTube container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating books animation */
+.floating-book {
+  animation: floatingBook 6s ease-in-out infinite;
+}
+
+.floating-book:nth-child(2) { animation-delay: -2s; }
+.floating-book:nth-child(3) { animation-delay: -4s; }
+
+@keyframes floatingBook {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(2deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* Progress bar */
+.progress-bar {
+  background: linear-gradient(90deg, #a855f7, #7e22ce, #a855f7);
+  background-size: 200% 100%;
+  animation: progressShine 2s linear infinite;
+}
+
+@keyframes progressShine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+  .modal-slide {
+    max-width: 100%;
+  }
+}
