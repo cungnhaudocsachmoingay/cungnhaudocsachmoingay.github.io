@@ -399,7 +399,7 @@ function renderHome() {
               </button>
             </div>
             <div class="flex items-center gap-8 mt-10 text-sm text-purple-200">
-              <div><span class="text-2xl font-bold text-white">${books.length}</span>+ Sách</div>
+              <div><span class="text-2xl font-bold text-white">600</span>+ Sách</div>
               <div><span class="text-2xl font-bold text-white">${categories.length}</span> Thể loại</div>
               <div><span class="text-2xl font-bold text-white">${readBooks.length}</span> Đã đọc</div>
               <div><span class="text-2xl font-bold text-white">100</span>+ Tài khoản</div>
